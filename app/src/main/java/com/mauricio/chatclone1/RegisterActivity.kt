@@ -70,8 +70,8 @@ class RegisterActivity : AppCompatActivity() {
                     val userHashMap = HashMap<String ,Any>()
                     userHashMap["uid"]=firebaseUserID
                     userHashMap["username"]= username
-                    userHashMap["profile"]="https://firebasestorage.googleapis.com/v0/b/chatclone1.appspot.com/o/profile.png?alt=media&token=14cfe734-eea2-4731-9a79-27931c440648"
-                    userHashMap["cover"]="https://firebasestorage.googleapis.com/v0/b/chatclone1.appspot.com/o/cover.jpg?alt=media&token=1a8fd207-0c9e-4318-935c-bb4d235b7e36"
+                    userHashMap["profile"]="https://firebasestorage.googleapis.com/v0/b/chatclone1.appspot.com/o/profile.png?alt=media&token=2916f630-1809-49e0-a194-1450fac3fb15"
+                    userHashMap["cover"]="https://firebasestorage.googleapis.com/v0/b/chatclone1.appspot.com/o/cover.jpg?alt=media&token=c7d04b22-2d28-40a7-91fc-4b8442ff5f70"
                     userHashMap["status"]="offline"
                     userHashMap["search"]=username.toLowerCase()
                     // Acceso a tus redes sociales

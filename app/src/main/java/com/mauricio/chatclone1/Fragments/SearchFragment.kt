@@ -21,6 +21,8 @@ import com.google.firebase.database.ValueEventListener
 import com.mauricio.chatclone1.AdaptersClasses.UserAdapter
 import com.mauricio.chatclone1.ModelClasses.Users
 import com.mauricio.chatclone1.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,17 +68,17 @@ class SearchFragment : Fragment() {
         mUsers= ArrayList()
         retrieveAllUsers()
 
-        searchUserET.addTextChangedListener(object : TextWatcher{
+        searchUserET!!.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
-                TODO("Not yet implemented")
+
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                TODO("Not yet implemented")
+
             }
 
-            override fun onTextChanged(cs: CharSequence?, start: Int, before: Int, count: Int) {
-                searchForUsers(cs.toString().toLowerCase())
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+              searchForUsers(s.toString().toLowerCase())
             }
 
         })
