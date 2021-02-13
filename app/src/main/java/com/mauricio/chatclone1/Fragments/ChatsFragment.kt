@@ -13,9 +13,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.iid.FirebaseInstanceId
+import com.google.firebase.ktx.Firebase
 import com.mauricio.chatclone1.AdaptersClasses.UserAdapter
 import com.mauricio.chatclone1.ModelClasses.Chatlist
 import com.mauricio.chatclone1.ModelClasses.Users
+import com.mauricio.chatclone1.Notifications.Token
 import com.mauricio.chatclone1.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -85,7 +88,14 @@ class ChatsFragment : Fragment() {
 
         })
 
+        updateToken(FirebaseInstanceId.getInstance().token)
         return view
+    }
+
+    private fun updateToken(token: String?) {
+        val ref = FirebaseDatabase.getInstance().reference.child("Tokens")
+        val token1= Token(token!!)
+        ref.child(firebaseUser!!.uid).setValue(token1)
     }
 
     private fun retrieveChatList(){
